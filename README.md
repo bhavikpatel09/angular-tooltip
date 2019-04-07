@@ -1,3 +1,10 @@
+# Steps to run the project
+
+1) install node modules by running
+    npm install --save
+2) npm start
+
+
 # Assignment
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
