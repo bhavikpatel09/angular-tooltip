@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
   constructor() { }
 
+  // @ViewChild('parentDiv') parentDiv: 
   @ViewChild('btnOne')
   btnOne: TooltipComponent;
   @ViewChild('btnTwo')
@@ -33,7 +34,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.btnOne.state = false;
       }
     }
-  } 
+  }
+
+  @HostListener('click', ['$event']) onclick($event) {
+    debugger;
+    if(event.target["localName"] !="button"){
+      this.btnOne.state=false;
+      this.btnTwo.state=false;
+    }
+  }
   @HostListener('document:keydown', ['$event']) onKeydownHandler(event: KeyboardEvent) {
     if (event.keyCode === ESCAPE_KEYCODE) {
       this.btnTwo.state = false;
